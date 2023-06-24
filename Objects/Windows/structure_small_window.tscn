@@ -1,0 +1,539 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Texture2D" uid="uid://ckbxee4ky7squ" path="res://Imports/icons/cross_close.png" id="1_htmwq"]
+[ext_resource type="Script" path="res://Objects/Windows/StructureWindows.cs" id="1_pkth8"]
+[ext_resource type="Texture2D" path="res://Objects/Structures/Terran/Icons/metall_mine.dds" id="2_hd7m2"]
+[ext_resource type="Texture2D" uid="uid://ofve20kw5eqv" path="res://Images/Icons/metal.png" id="3_r5uc7"]
+[ext_resource type="Texture2D" uid="uid://dag8dcdup2bs1" path="res://Images/Icons/crystal.png" id="4_wtbjo"]
+[ext_resource type="Texture2D" uid="uid://ca43ri8bkv2eb" path="res://Images/Icons/deuterium.png" id="5_8jigc"]
+[ext_resource type="Texture2D" uid="uid://dyxgl6gjqluj7" path="res://Images/Icons/energy.png" id="6_vivhw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_knqv5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3qq7l"]
+
+[node name="StructureSmallWindow" type="CanvasLayer"]
+layer = 2
+visible = false
+script = ExtResource("1_pkth8")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.242
+anchor_top = 0.237
+anchor_right = 0.758
+anchor_bottom = 0.652
+offset_left = -0.640015
+offset_top = 0.039978
+offset_right = 0.640015
+offset_bottom = -0.160034
+
+[node name="Background" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.941176)
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="Close" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.944
+anchor_top = 0.012
+anchor_right = 0.994
+anchor_bottom = 0.1
+offset_left = -0.447998
+offset_top = 2.62399
+offset_right = -2.04797
+offset_bottom = 2.30399
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("1_htmwq")
+ignore_texture_size = true
+stretch_mode = 6
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="DoIt" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.032
+anchor_top = 0.536
+anchor_right = 0.194
+anchor_bottom = 0.661
+offset_left = 0.255999
+offset_top = -0.128006
+offset_right = -0.447998
+offset_bottom = -0.127991
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_knqv5")
+text = "Строить"
+
+[node name="Destroy" type="LinkButton" parent="Control"]
+offset_left = 16.0
+offset_top = 336.0
+offset_right = 104.0
+offset_bottom = 360.0
+theme_override_font_sizes/font_size = 14
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3qq7l")
+text = "Разрушить"
+
+[node name="Move" type="LinkButton" parent="Control"]
+offset_left = 122.0
+offset_top = 336.0
+offset_right = 226.0
+offset_bottom = 360.0
+theme_override_font_sizes/font_size = 14
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3qq7l")
+text = "Переместить"
+
+[node name="Sprite" type="Sprite2D" parent="Control"]
+position = Vector2(112, 104)
+scale = Vector2(1.6, 1.46667)
+texture = ExtResource("2_hd7m2")
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="Name" type="Label" parent="Control" groups=["info_labels"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.333
+anchor_top = 0.012
+anchor_right = 0.667
+anchor_bottom = 0.087
+offset_left = 53.664
+offset_top = 2.624
+offset_right = 106.336
+offset_bottom = 17.024
+theme_override_font_sizes/font_size = 30
+text = "Шахта добычи металла"
+vertical_alignment = 1
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="Level" type="Label" parent="Control" groups=["info_labels"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.766
+anchor_top = 0.012
+anchor_right = 0.784
+anchor_bottom = 0.103
+offset_left = 8.12799
+offset_top = 10.624
+offset_right = 45.272
+offset_bottom = 9.856
+theme_override_font_sizes/font_size = 25
+text = "5"
+vertical_alignment = 1
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="PriceHeader" type="Label" parent="Control"]
+offset_left = 288.0
+offset_top = 80.0
+offset_right = 416.0
+offset_bottom = 111.0
+theme_override_font_sizes/font_size = 20
+text = "Стоимость :"
+
+[node name="StaticLabel" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.278
+anchor_top = 0.225
+anchor_right = 0.306
+anchor_bottom = 0.275
+offset_left = 164.224
+offset_top = 27.2
+offset_right = 168.448
+offset_bottom = 35.8
+texture = ExtResource("3_r5uc7")
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="DynamicLabel" type="Label" parent="Control" groups=["info_labels"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.333
+anchor_top = 0.225
+anchor_right = 0.444
+anchor_bottom = 0.275
+offset_left = 149.664
+offset_top = -20.8
+offset_right = 103.552
+offset_bottom = -11.2
+theme_override_colors/font_color = Color(0.815686, 0.388235, 0.113725, 1)
+theme_override_font_sizes/font_size = 18
+text = "1300"
+vertical_alignment = 1
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="StaticLabel2" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.278
+anchor_top = 0.313
+anchor_right = 0.319
+anchor_bottom = 0.387
+offset_left = 292.224
+offset_top = -60.224
+offset_right = 283.552
+offset_bottom = -61.376
+texture = ExtResource("4_wtbjo")
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="DynamicLabel2" type="Label" parent="Control" groups=["info_labels"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.333
+anchor_top = 0.325
+anchor_right = 0.444
+anchor_bottom = 0.375
+offset_left = 277.664
+offset_top = -65.6
+offset_right = 231.552
+offset_bottom = -57.0
+theme_override_colors/font_color = Color(0.235294, 0.352941, 1, 1)
+text = "1300"
+vertical_alignment = 1
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="StaticLabel3" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.278
+anchor_top = 0.425
+anchor_right = 0.306
+anchor_bottom = 0.475
+offset_left = 420.224
+offset_top = -110.4
+offset_right = 424.448
+offset_bottom = -100.8
+texture = ExtResource("5_8jigc")
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="DynamicLabel3" type="Label" parent="Control" groups=["info_labels"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.333
+anchor_top = 0.425
+anchor_right = 0.431
+anchor_bottom = 0.475
+offset_left = 405.664
+offset_top = -110.4
+offset_right = 372.448
+offset_bottom = -100.8
+theme_override_colors/font_color = Color(0.12549, 1, 0.647059, 1)
+text = "100"
+vertical_alignment = 1
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="RestHeader" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.607
+anchor_top = 0.612
+anchor_right = 0.7
+anchor_bottom = 0.65
+offset_left = -314.144
+offset_top = -146.176
+offset_right = -293.28
+offset_bottom = -132.2
+theme_override_font_sizes/font_size = 20
+text = "Остаток :"
+
+[node name="StaticLabel5" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.225
+anchor_right = 0.528
+anchor_bottom = 0.275
+offset_left = -56.0
+offset_top = -20.8
+offset_right = -51.776
+offset_bottom = -11.2
+texture = ExtResource("3_r5uc7")
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="DynamicLabel5" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.556
+anchor_top = 0.225
+anchor_right = 0.667
+anchor_bottom = 0.275
+offset_left = -71.552
+offset_top = 27.2
+offset_right = -117.664
+offset_bottom = 33.8
+theme_override_colors/font_color = Color(0.815686, 0.388235, 0.113725, 1)
+theme_override_font_sizes/font_size = 18
+text = "1300"
+vertical_alignment = 1
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="StaticLabel6" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.325
+anchor_right = 0.528
+anchor_bottom = 0.375
+offset_left = 72.0
+offset_top = -17.6
+offset_right = 76.224
+offset_bottom = -8.0
+texture = ExtResource("4_wtbjo")
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="DynamicLabel6" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.556
+anchor_top = 0.325
+anchor_right = 0.667
+anchor_bottom = 0.375
+offset_left = 56.448
+offset_top = -17.6
+offset_right = 10.336
+offset_bottom = -8.0
+theme_override_colors/font_color = Color(0.235294, 0.352941, 1, 1)
+text = "1300"
+vertical_alignment = 1
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="StaticLabel7" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.425
+anchor_right = 0.528
+anchor_bottom = 0.475
+offset_left = 200.0
+offset_top = -62.4
+offset_right = 204.224
+offset_bottom = -52.8
+texture = ExtResource("5_8jigc")
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="DynamicLabel7" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.556
+anchor_top = 0.425
+anchor_right = 0.667
+anchor_bottom = 0.475
+offset_left = 184.448
+offset_top = -62.4
+offset_right = 138.336
+offset_bottom = -52.8
+theme_override_colors/font_color = Color(0.12549, 1, 0.647059, 1)
+text = "100"
+vertical_alignment = 1
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="StaticLabel8" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.525
+anchor_right = 0.528
+anchor_bottom = 0.575
+offset_left = 327.0
+offset_top = -107.2
+offset_right = 331.224
+offset_bottom = -97.6
+texture = ExtResource("6_vivhw")
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="DynamicLabel8" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.556
+anchor_top = 0.525
+anchor_right = 0.667
+anchor_bottom = 0.575
+offset_left = 312.448
+offset_top = -107.2
+offset_right = 266.336
+offset_bottom = -97.6
+theme_override_colors/font_color = Color(1, 0.788235, 0.219608, 1)
+text = "-10"
+vertical_alignment = 1
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="StaticLabel9" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.222
+anchor_top = 0.625
+anchor_right = 0.333
+anchor_bottom = 0.675
+offset_left = 67.776
+offset_top = -88.0
+offset_right = 85.664
+offset_bottom = -78.4
+theme_override_font_sizes/font_size = 18
+text = "Доход в час:"
+vertical_alignment = 1
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="DynamicLabel9" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.333
+anchor_top = 0.625
+anchor_right = 0.444
+anchor_bottom = 0.675
+offset_left = 85.664
+offset_top = -88.0
+offset_right = 39.552
+offset_bottom = -78.4
+theme_override_colors/font_color = Color(0.815686, 0.388235, 0.113725, 1)
+text = "0"
+vertical_alignment = 1
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="StaticLabel10" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.444
+anchor_top = 0.625
+anchor_right = 0.556
+anchor_bottom = 0.675
+offset_left = 127.552
+offset_top = -88.0
+offset_right = 144.448
+offset_bottom = -78.4
+theme_override_font_sizes/font_size = 18
+text = "Следующий:"
+vertical_alignment = 1
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="DynamicLabel10" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.556
+anchor_top = 0.625
+anchor_right = 0.667
+anchor_bottom = 0.675
+offset_left = 152.448
+offset_top = -88.0
+offset_right = 106.336
+offset_bottom = -78.4
+theme_override_colors/font_color = Color(0.815686, 0.388235, 0.113725, 1)
+text = "10"
+vertical_alignment = 1
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="StaticLabel11" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.444
+anchor_top = 0.625
+anchor_right = 0.556
+anchor_bottom = 0.675
+offset_left = -152.448
+offset_top = -40.0
+offset_right = -135.552
+offset_bottom = -30.4
+theme_override_font_sizes/font_size = 18
+text = "Истощение:"
+vertical_alignment = 1
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="DynamicLabel11" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.556
+anchor_top = 0.625
+anchor_right = 0.667
+anchor_bottom = 0.675
+offset_left = -135.552
+offset_top = -40.0
+offset_right = -181.664
+offset_bottom = -30.4
+theme_override_colors/font_color = Color(0.815686, 0.388235, 0.113725, 1)
+text = "0"
+vertical_alignment = 1
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="StaticLabel12" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.444
+anchor_top = 0.625
+anchor_right = 0.556
+anchor_bottom = 0.675
+offset_left = 127.552
+offset_top = -40.0
+offset_right = 144.448
+offset_bottom = -30.4
+theme_override_font_sizes/font_size = 18
+text = "Следующий:"
+vertical_alignment = 1
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="DynamicLabel12" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.556
+anchor_top = 0.625
+anchor_right = 0.667
+anchor_bottom = 0.675
+offset_left = 152.448
+offset_top = -40.0
+offset_right = 90.336
+offset_bottom = -30.4
+theme_override_colors/font_color = Color(0.815686, 0.388235, 0.113725, 1)
+text = "0"
+vertical_alignment = 1
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="ShortDescript" type="ColorRect" parent="Control"]
+offset_left = 288.0
+offset_top = 320.0
+offset_right = 928.0
+offset_bottom = 432.0
+color = Color(0.0509804, 0.0509804, 0.0509804, 1)
+
+[node name="Label" type="RichTextLabel" parent="Control/ShortDescript"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.013
+anchor_top = 0.071
+anchor_right = 0.987
+anchor_bottom = 0.929
+offset_left = -0.112
+offset_top = 0.0479999
+offset_right = 0.112
+offset_bottom = -0.0480042
+mouse_default_cursor_shape = 16
+theme_override_font_sizes/normal_font_size = 18
+text = "Основной поставщик металла для строительства несущих структур построек и кораблей."
+
+[connection signal="pressed" from="Control/Close" to="." method="OnClosePressed"]

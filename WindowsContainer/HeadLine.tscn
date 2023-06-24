@@ -1,0 +1,305 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://WindowsContainer/HeadLine.cs" id="1_8k3op"]
+[ext_resource type="Texture2D" uid="uid://b103vkuyplaec" path="res://Imports/icons/options.png" id="2_gy522"]
+[ext_resource type="Texture2D" uid="uid://bcvvv4ygi1i5q" path="res://Images/Icons/message.png" id="3_ryms1"]
+[ext_resource type="Texture2D" uid="uid://c641gdkwcjcxk" path="res://Images/Icons/reports.png" id="4_cnsuj"]
+[ext_resource type="Texture2D" uid="uid://ofve20kw5eqv" path="res://Images/Icons/metal.png" id="5_onyc3"]
+[ext_resource type="Texture2D" uid="uid://dag8dcdup2bs1" path="res://Images/Icons/crystal.png" id="6_eysv8"]
+[ext_resource type="Texture2D" uid="uid://ca43ri8bkv2eb" path="res://Images/Icons/deuterium.png" id="7_f0w7k"]
+[ext_resource type="Texture2D" uid="uid://b32h5f37cpc7" path="res://Images/Icons/hydarian.png" id="8_s8yyf"]
+[ext_resource type="Texture2D" uid="uid://bj21aix1we6nm" path="res://Imports/images/avatar/avatar.png" id="9_68142"]
+[ext_resource type="Texture2D" uid="uid://cab1o1ug1v6vr" path="res://Imports/images/avatar/aliance_avatar.png" id="10_e1637"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sy0fn"]
+
+[node name="HeadLine" type="CanvasLayer"]
+script = ExtResource("1_8k3op")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.178
+offset_bottom = -112.24
+
+[node name="Background" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.933
+anchor_bottom = 1.0
+offset_right = 0.639893
+color = Color(0, 0, 0, 0.960784)
+
+[node name="Background2" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.933
+anchor_right = 1.0
+anchor_bottom = 1.4
+offset_left = 0.639893
+offset_bottom = -1.52588e-05
+color = Color(0, 0, 0, 0.960784)
+
+[node name="Options" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.004
+anchor_top = 0.1
+anchor_right = 0.017
+anchor_bottom = 0.4
+offset_left = 0.32
+offset_right = -0.640003
+texture_normal = ExtResource("2_gy522")
+ignore_texture_size = true
+stretch_mode = 6
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="Messages" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 1712.0
+offset_top = 48.0
+offset_right = 1925.0
+offset_bottom = 251.0
+scale = Vector2(0.15, 0.118227)
+texture_normal = ExtResource("3_ryms1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Reports" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 1760.0
+offset_top = 48.0
+offset_right = 1930.0
+offset_bottom = 245.0
+scale = Vector2(0.1875, 0.121827)
+texture_normal = ExtResource("4_cnsuj")
+stretch_mode = 0
+
+[node name="Shop" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.908
+anchor_top = 2.1
+anchor_right = 0.996
+anchor_bottom = 2.5
+offset_left = 0.640015
+offset_top = -3.05176e-05
+offset_right = -0.319702
+offset_bottom = -1.52588e-05
+theme_override_font_sizes/font_size = 17
+text = "Магазин"
+
+[node name="Quests" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.846
+anchor_top = 1.1
+anchor_right = 0.929
+anchor_bottom = 1.5
+offset_left = -0.320068
+offset_right = 0.319946
+offset_bottom = -2.28882e-05
+theme_override_font_sizes/font_size = 15
+text = "Задания"
+
+[node name="Label" type="Label" parent="Control" groups=["user_labels"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.021
+anchor_top = 0.1
+anchor_right = 0.133
+anchor_bottom = 0.4
+offset_left = -0.320004
+offset_right = 0.639999
+theme_override_font_sizes/font_size = 14
+vertical_alignment = 1
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="Image1" type="Sprite2D" parent="Control"]
+position = Vector2(1320, 20)
+scale = Vector2(1.23077, 0.923077)
+texture = ExtResource("5_onyc3")
+
+[node name="Label1" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.1
+anchor_right = 0.733
+anchor_bottom = 0.4
+offset_left = -0.00012207
+offset_right = 0.639893
+theme_override_font_sizes/font_size = 14
+text = "2300"
+vertical_alignment = 1
+
+[node name="Image2" type="Sprite2D" parent="Control"]
+position = Vector2(1448, 20)
+scale = Vector2(1.23077, 0.923077)
+texture = ExtResource("6_eysv8")
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.767
+anchor_top = 0.1
+anchor_right = 0.8
+anchor_bottom = 0.4
+offset_left = -0.640015
+theme_override_font_sizes/font_size = 14
+text = "2300"
+vertical_alignment = 1
+
+[node name="Image3" type="Sprite2D" parent="Control"]
+position = Vector2(1576, 20)
+scale = Vector2(1.23077, 0.923077)
+texture = ExtResource("7_f0w7k")
+
+[node name="Label3" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.833
+anchor_top = 0.1
+anchor_right = 0.867
+anchor_bottom = 0.4
+offset_left = 0.639893
+offset_right = -0.640137
+theme_override_font_sizes/font_size = 14
+text = "2300"
+vertical_alignment = 1
+
+[node name="Image4" type="Sprite2D" parent="Control"]
+position = Vector2(1704, 20)
+scale = Vector2(1.23077, 0.923077)
+texture = ExtResource("8_s8yyf")
+
+[node name="Label4" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9
+anchor_top = 0.1
+anchor_right = 0.933
+anchor_bottom = 0.4
+offset_left = -0.000244141
+offset_right = 0.639648
+theme_override_font_sizes/font_size = 14
+text = "2300"
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.908
+anchor_top = 1.6
+anchor_right = 0.996
+anchor_bottom = 2.0
+offset_left = 0.639893
+offset_top = -1.52588e-05
+offset_right = -0.320068
+offset_bottom = -1.52588e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "Базовый пропуск"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="Avatar" type="Sprite2D" parent="Control"]
+position = Vector2(1872, 48)
+scale = Vector2(0.355555, 0.355556)
+texture = ExtResource("9_68142")
+
+[node name="Aliance" type="Sprite2D" parent="Control"]
+position = Vector2(1820, 84)
+scale = Vector2(0.177779, 0.177778)
+texture = ExtResource("10_e1637")
+
+[node name="links" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 1536.0
+offset_bottom = 72.0
+color = Color(0, 0, 0, 0.862745)
+
+[node name="Universe" type="Button" parent="Control/links"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.005
+anchor_right = 0.089
+anchor_bottom = 1.0
+offset_left = 0.32
+offset_right = -0.70401
+offset_bottom = -6.4
+theme_override_font_sizes/font_size = 17
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sy0fn")
+text = "Вселенная"
+
+[node name="Overview" type="Button" parent="Control/links"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.109
+anchor_right = 0.193
+anchor_bottom = 1.0
+offset_left = 0.575974
+offset_right = -0.447998
+offset_bottom = -6.4
+theme_override_font_sizes/font_size = 17
+text = "Обзор"
+
+[node name="Structures" type="Button" parent="Control/links"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.214
+anchor_right = 0.297
+anchor_bottom = 1.0
+offset_left = -0.704071
+offset_right = -0.192017
+offset_bottom = -6.4
+theme_override_font_sizes/font_size = 17
+text = "Постройки"
+
+[node name="Research" type="Button" parent="Control/links"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.318
+anchor_right = 0.401
+anchor_bottom = 1.0
+offset_left = -0.447998
+offset_right = 0.0640259
+offset_bottom = -6.4
+theme_override_font_sizes/font_size = 17
+text = "Технологии"
+
+[node name="Shipyard" type="Button" parent="Control/links"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.422
+anchor_right = 0.505
+anchor_bottom = 1.0
+offset_left = -0.192017
+offset_right = 0.320007
+offset_bottom = -6.4
+theme_override_font_sizes/font_size = 17
+text = "Верфь"
+
+[node name="Defense" type="Button" parent="Control/links"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.526
+anchor_right = 0.609
+anchor_bottom = 1.0
+offset_left = 0.0639648
+offset_right = 0.575928
+theme_override_font_sizes/font_size = 17
+text = "Оборона"
+
+[connection signal="pressed" from="Control/links/Universe" to="." method="OnLinkButtonPressed" binds= [0]]
+[connection signal="pressed" from="Control/links/Overview" to="." method="OnLinkButtonPressed" binds= [1]]
+[connection signal="pressed" from="Control/links/Structures" to="." method="OnLinkButtonPressed" binds= [2]]
+[connection signal="pressed" from="Control/links/Research" to="." method="OnLinkButtonPressed" binds= [3]]
+[connection signal="pressed" from="Control/links/Shipyard" to="." method="OnLinkButtonPressed" binds= [4]]
+[connection signal="pressed" from="Control/links/Defense" to="." method="OnLinkButtonPressed" binds= [5]]

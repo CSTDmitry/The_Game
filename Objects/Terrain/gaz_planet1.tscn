@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://c68yshaeuyjsp"]
+
+[ext_resource type="Texture2D" uid="uid://d1fb3vmxr57ay" path="res://Images/Planets/gas1_terrain.jpg" id="1_wp225"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nd8ob"]
+size = Vector2(2048, 64)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ibhhe"]
+radius = 184.174
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6jp8"]
+size = Vector2(128, 50)
+
+[node name="GazPlanet1" type="Node2D"]
+
+[node name="Terrain" type="Sprite2D" parent="."]
+position = Vector2(1024, 1024)
+texture = ExtResource("1_wp225")
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1024, 32)
+shape = SubResource("RectangleShape2D_nd8ob")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(384, 576)
+shape = SubResource("CircleShape2D_ibhhe")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1152, 560)
+shape = SubResource("CircleShape2D_ibhhe")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1136, 1344)
+shape = SubResource("CircleShape2D_ibhhe")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(368, 1312)
+shape = SubResource("CircleShape2D_ibhhe")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1984, 552)
+shape = SubResource("RectangleShape2D_b6jp8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 544)

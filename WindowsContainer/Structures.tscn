@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://b8rns48mbttgu"]
+
+[ext_resource type="Script" path="res://Objects/Terrain/Terrain.cs" id="1_18prq"]
+[ext_resource type="PackedScene" uid="uid://c68yshaeuyjsp" path="res://Objects/Terrain/gaz_planet1.tscn" id="2_h483y"]
+[ext_resource type="PackedScene" uid="uid://dq3ylqii272b6" path="res://Objects/Structures/Terran/metall_mine.tscn" id="4_x50h6"]
+[ext_resource type="Script" path="res://Objects/Structures/Terran/MetallMine.cs" id="5_f0tp6"]
+[ext_resource type="PackedScene" uid="uid://cqcta3xrcmde7" path="res://Objects/Drone/terran_drone.tscn" id="5_jr6b8"]
+[ext_resource type="PackedScene" uid="uid://c5b5pyahxtumw" path="res://Objects/Structures/Terran/crustal_mine.tscn" id="6_0diq1"]
+[ext_resource type="Script" path="res://Objects/Structures/Terran/CrustalMine.cs" id="7_yehdw"]
+[ext_resource type="PackedScene" path="res://Objects/Windows/structure_small_window.tscn" id="8_cfd5s"]
+
+[node name="Structures" type="Node"]
+script = ExtResource("1_18prq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.0
+drag_top_margin = 0.0
+drag_right_margin = 0.0
+drag_bottom_margin = 0.0
+
+[node name="Terrain" type="Node2D" parent="."]
+
+[node name="GazPlanet1" parent="Terrain" instance=ExtResource("2_h483y")]
+
+[node name="TerranDrone" parent="." instance=ExtResource("5_jr6b8")]
+position = Vector2(352, 528)
+
+[node name="BuildingsContainer" type="Node2D" parent="."]
+
+[node name="Metall Mine" parent="BuildingsContainer" instance=ExtResource("4_x50h6")]
+position = Vector2(664, 336)
+input_pickable = true
+script = ExtResource("5_f0tp6")
+
+[node name="Crustal Mine" parent="BuildingsContainer" instance=ExtResource("6_0diq1")]
+visible = false
+position = Vector2(8, -376)
+input_pickable = true
+script = ExtResource("7_yehdw")
+
+[node name="StructureSmallWindow" parent="." instance=ExtResource("8_cfd5s")]
+
+[connection signal="Click" from="BuildingsContainer/Metall Mine" to="." method="OnBuildingClick"]
+[connection signal="input_event" from="BuildingsContainer/Metall Mine" to="BuildingsContainer/Metall Mine" method="OnInputEvent"]
+[connection signal="Click" from="BuildingsContainer/Crustal Mine" to="." method="OnBuildingClick"]
+[connection signal="input_event" from="BuildingsContainer/Crustal Mine" to="BuildingsContainer/Crustal Mine" method="OnInputEvent"]

@@ -1,0 +1,502 @@
+[gd_scene load_steps=13 format=3 uid="uid://dawmlhe08vobv"]
+
+[ext_resource type="Texture2D" path="res://Imports/planets/planet-1.dds" id="2_mpg64"]
+[ext_resource type="Texture2D" uid="uid://dlo68fyuwbags" path="res://Imports/icons/research.png" id="3_534jl"]
+[ext_resource type="Texture2D" uid="uid://irwabu8utskd" path="res://Imports/icons/hangar.png" id="4_ea422"]
+[ext_resource type="Texture2D" uid="uid://dxr7pkaqijal4" path="res://Imports/icons/fleets_in_flight.png" id="5_8fsyt"]
+[ext_resource type="Texture2D" uid="uid://dn036n6ea4q10" path="res://Imports/icons/expedition.png" id="6_k33ad"]
+[ext_resource type="Texture2D" uid="uid://c722wn4dohymj" path="res://Imports/icons/quest.png" id="7_38t52"]
+[ext_resource type="Texture2D" uid="uid://lr6ri60ky7eu" path="res://Imports/images/planeten/small/s_dschjungelplanet02.jpg" id="7_l4mmf"]
+[ext_resource type="Texture2D" uid="uid://cmxtjtk3sqd1m" path="res://Imports/images/planeten/small/s_eisplanet10.jpg" id="9_ihi3u"]
+[ext_resource type="Texture2D" uid="uid://x0qxyu8y08y" path="res://Imports/icons/right_arrow.png" id="9_qbyhm"]
+[ext_resource type="Texture2D" uid="uid://x2kxstfkk2gx" path="res://Imports/icons/close_arrow.png" id="10_nkys5"]
+[ext_resource type="Texture2D" uid="uid://dpd53n35sua66" path="res://Imports/images/planeten/small/s_gasplanet05.jpg" id="11_xofxb"]
+[ext_resource type="Texture2D" uid="uid://dgb5ly0fjrbk5" path="res://Imports/images/planeten/small/s_trockenplanet03.jpg" id="12_2htue"]
+
+[node name="Overview" type="Node"]
+
+[node name="background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_mpg64")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="quck_panel" type="ColorRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.958
+anchor_top = 0.341
+anchor_right = 1.0
+anchor_bottom = 0.711
+offset_left = 0.639893
+offset_top = -0.279999
+offset_bottom = 0.119995
+color = Color(0.0431373, 0.0431373, 0.0431373, 0.878431)
+
+[node name="research" type="TextureButton" parent="quck_panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.02
+anchor_right = 0.9
+anchor_bottom = 0.18
+offset_left = -1.23978e-05
+offset_right = -0.000114441
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_534jl")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="hangar" type="TextureButton" parent="quck_panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.22
+anchor_right = 0.9
+anchor_bottom = 0.38
+offset_left = 0.000109673
+offset_bottom = -1.52588e-05
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_ea422")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="fleets_in_flight" type="TextureButton" parent="quck_panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.42
+anchor_right = 0.9
+anchor_bottom = 0.58
+offset_left = 0.000109673
+offset_bottom = -1.52588e-05
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_8fsyt")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="expedition" type="TextureButton" parent="quck_panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.62
+anchor_right = 0.9
+anchor_bottom = 0.78
+offset_left = 0.000109673
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("6_k33ad")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="quests" type="TextureButton" parent="quck_panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.82
+anchor_right = 0.9
+anchor_bottom = 0.98
+offset_left = 0.000109673
+offset_top = -3.05176e-05
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("7_38t52")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="PlanetsList" type="ColorRect" parent="."]
+anchors_preset = -1
+anchor_top = 0.089
+anchor_right = 0.067
+anchor_bottom = 0.163
+offset_top = -0.120003
+offset_right = -0.639999
+offset_bottom = -0.0400085
+color = Color(0, 0, 0, 0.862745)
+
+[node name="Sprite2D" type="Sprite2D" parent="PlanetsList"]
+position = Vector2(32, 48)
+scale = Vector2(0.545455, 0.534091)
+texture = ExtResource("7_l4mmf")
+
+[node name="Button" type="Button" parent="PlanetsList"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.687
+anchor_top = 0.4
+anchor_right = 0.937
+anchor_bottom = 0.8
+offset_left = 0.0639954
+offset_right = 0.0639954
+
+[node name="Sprite2D" type="Sprite2D" parent="PlanetsList/Button"]
+position = Vector2(16, 16)
+scale = Vector2(0.09375, 0.0625)
+texture = ExtResource("9_qbyhm")
+
+[node name="Label" type="Label" parent="PlanetsList"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.062
+anchor_right = 0.937
+anchor_bottom = 0.3
+offset_left = 0.0639997
+offset_right = 0.0639954
+theme_override_font_sizes/font_size = 13
+text = "Планеты"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="PlanetsList"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.4
+anchor_right = 0.687
+anchor_bottom = 0.8
+offset_right = 0.0639954
+theme_override_font_sizes/font_size = 16
+text = "4
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MoonsList" type="ColorRect" parent="."]
+anchors_preset = -1
+anchor_top = 0.17
+anchor_right = 0.067
+anchor_bottom = 0.244
+offset_top = 0.399994
+offset_right = -0.639999
+offset_bottom = 0.47998
+color = Color(0, 0, 0, 0.862745)
+
+[node name="Sprite2D" type="Sprite2D" parent="MoonsList"]
+position = Vector2(32, 48)
+scale = Vector2(0.545455, 0.534091)
+texture = ExtResource("9_ihi3u")
+
+[node name="Button" type="Button" parent="MoonsList"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.687
+anchor_top = 0.4
+anchor_right = 0.937
+anchor_bottom = 0.8
+offset_left = 0.0639954
+offset_right = 0.0639954
+
+[node name="Sprite2D" type="Sprite2D" parent="MoonsList/Button"]
+position = Vector2(16, 16)
+scale = Vector2(0.09375, 0.0625)
+texture = ExtResource("10_nkys5")
+
+[node name="Label" type="Label" parent="MoonsList"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.062
+anchor_right = 0.937
+anchor_bottom = 0.3
+offset_left = 0.0639997
+offset_right = 0.0639954
+theme_override_font_sizes/font_size = 12
+text = "Луны"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="MoonsList"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.4
+anchor_right = 0.687
+anchor_bottom = 0.8
+offset_right = 0.0639954
+theme_override_font_sizes/font_size = 16
+text = "2
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MoonsLine" type="ColorRect" parent="MoonsList"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.187
+anchor_bottom = 0.9
+offset_left = 128.0
+offset_right = 168.064
+offset_bottom = 8.0
+color = Color(0, 0, 0, 0.862745)
+
+[node name="MoonBlock" type="ColorRect" parent="MoonsList/MoonsLine"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.083
+anchor_top = 0.1
+anchor_right = 0.417
+anchor_bottom = 0.9
+offset_left = 0.0639992
+offset_right = -0.064003
+color = Color(1, 1, 1, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="MoonsList/MoonsLine/MoonBlock"]
+position = Vector2(32, 40)
+scale = Vector2(0.545455, 0.545455)
+texture = ExtResource("11_xofxb")
+
+[node name="Label" type="Label" parent="MoonsList/MoonsLine/MoonBlock"]
+layout_mode = 0
+offset_top = -8.0
+offset_right = 64.0
+offset_bottom = 12.0
+theme_override_font_sizes/font_size = 12
+text = "Phobos"
+horizontal_alignment = 1
+
+[node name="MoonBlock2" type="ColorRect" parent="MoonsList/MoonsLine"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.542
+anchor_top = 0.1
+anchor_right = 0.875
+anchor_bottom = 0.9
+offset_left = -0.0640106
+offset_right = -1.52588e-05
+color = Color(1, 1, 1, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="MoonsList/MoonsLine/MoonBlock2"]
+position = Vector2(32, 40)
+scale = Vector2(0.545455, 0.545455)
+texture = ExtResource("12_2htue")
+
+[node name="Label" type="Label" parent="MoonsList/MoonsLine/MoonBlock2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.125
+anchor_right = 1.0
+anchor_bottom = 0.187
+offset_bottom = 0.0319996
+theme_override_font_sizes/font_size = 12
+text = "Moon 8"
+horizontal_alignment = 1
+
+[node name="PlanetInfo" type="ColorRect" parent="."]
+anchors_preset = -1
+anchor_top = 0.296
+anchor_right = 0.133
+anchor_bottom = 0.504
+offset_top = 0.320007
+offset_right = 0.639999
+offset_bottom = -0.320007
+color = Color(0, 0, 0, 0.627451)
+
+[node name="PlanetName" type="Label" parent="PlanetInfo"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.031
+anchor_top = 0.031
+anchor_right = 0.969
+anchor_bottom = 0.156
+offset_left = 0.0639997
+offset_top = 0.0639997
+offset_right = -0.0640106
+offset_bottom = 0.0639992
+theme_override_font_sizes/font_size = 20
+text = "Teya"
+horizontal_alignment = 1
+
+[node name="InfoBlock" type="ColorRect" parent="PlanetInfo"]
+layout_mode = 0
+offset_top = 48.0
+offset_right = 256.0
+offset_bottom = 80.0
+color = Color(0, 0, 0, 0)
+
+[node name="StaticLabel" type="Label" parent="PlanetInfo/InfoBlock"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.031
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 0.0639997
+theme_override_font_sizes/font_size = 15
+text = "Диаметер :"
+vertical_alignment = 1
+
+[node name="DynamicLabel" type="Label" parent="PlanetInfo/InfoBlock"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.562
+anchor_right = 0.969
+anchor_bottom = 1.0
+offset_left = 0.127991
+offset_right = -0.0640106
+theme_override_font_sizes/font_size = 15
+text = "23 000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="InfoBlock2" type="ColorRect" parent="PlanetInfo"]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 256.0
+offset_bottom = 112.0
+color = Color(0, 0, 0, 0)
+
+[node name="StaticLabel" type="Label" parent="PlanetInfo/InfoBlock2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.031
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 0.0639997
+theme_override_font_sizes/font_size = 15
+text = "Тип планеты :"
+vertical_alignment = 1
+
+[node name="DynamicLabel" type="Label" parent="PlanetInfo/InfoBlock2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.562
+anchor_right = 0.969
+anchor_bottom = 1.0
+offset_left = 0.127991
+offset_right = -0.0640106
+theme_override_font_sizes/font_size = 15
+text = "Ледяная"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="InfoBlock3" type="ColorRect" parent="PlanetInfo"]
+layout_mode = 0
+offset_top = 112.0
+offset_right = 256.0
+offset_bottom = 144.0
+color = Color(0, 0, 0, 0)
+
+[node name="StaticLabel" type="Label" parent="PlanetInfo/InfoBlock3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.031
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 0.0639997
+theme_override_font_sizes/font_size = 15
+text = "Температура :"
+vertical_alignment = 1
+
+[node name="DynamicLabel" type="Label" parent="PlanetInfo/InfoBlock3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.562
+anchor_right = 0.969
+anchor_bottom = 1.0
+offset_left = 0.127991
+offset_right = -0.0640106
+theme_override_font_sizes/font_size = 15
+text = "от -70 до -140"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="InfoBlock4" type="ColorRect" parent="PlanetInfo"]
+layout_mode = 0
+offset_top = 144.0
+offset_right = 256.0
+offset_bottom = 176.0
+color = Color(0, 0, 0, 0)
+
+[node name="StaticLabel" type="Label" parent="PlanetInfo/InfoBlock4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.031
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 0.0639997
+theme_override_font_sizes/font_size = 15
+text = "Бонус добычи :"
+vertical_alignment = 1
+
+[node name="DynamicLabel" type="Label" parent="PlanetInfo/InfoBlock4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.562
+anchor_right = 0.969
+anchor_bottom = 1.0
+offset_left = 0.127991
+offset_right = -0.0640106
+theme_override_font_sizes/font_size = 15
+text = "Дейтерий"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="InfoBlock5" type="ColorRect" parent="PlanetInfo"]
+layout_mode = 0
+offset_top = 176.0
+offset_right = 256.0
+offset_bottom = 208.0
+color = Color(0, 0, 0, 0)
+
+[node name="StaticLabel" type="Label" parent="PlanetInfo/InfoBlock5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.031
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 0.0639997
+theme_override_font_sizes/font_size = 15
+text = "Агрессия фауны :"
+vertical_alignment = 1
+
+[node name="DynamicLabel" type="Label" parent="PlanetInfo/InfoBlock5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.562
+anchor_right = 0.969
+anchor_bottom = 1.0
+offset_left = 0.127991
+offset_right = -0.0640106
+theme_override_colors/font_color = Color(0, 0.619608, 0.109804, 1)
+theme_override_font_sizes/font_size = 15
+text = "Минимум"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MoonInfo" type="ColorRect" parent="."]
+anchors_preset = -1
+anchor_top = 0.519
+anchor_right = 0.133
+anchor_bottom = 0.541
+offset_top = -0.520081
+offset_right = 0.639999
+offset_bottom = -0.280029
+color = Color(0, 0, 0, 0.627451)
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="Label" type="Label" parent="MoonInfo"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.031
+anchor_top = 0.031
+anchor_right = 0.969
+anchor_bottom = 1.0
+offset_left = 0.0640001
+offset_top = -0.744
+offset_right = -0.0640106
+theme_override_colors/font_color = Color(0.65098, 0.0509804, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "У планеты нет луны"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cakdo78oc63vh"]
+
+[ext_resource type="Texture2D" uid="uid://bbx7ed1h2s4vp" path="res://Images/fon/shipyard.webp" id="1_y4qvo"]
+
+[node name="Shipyard" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_y4qvo")
+expand_mode = 1

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5b5pyahxtumw"]
+
+[ext_resource type="Texture2D" uid="uid://bjfrl5xcwugr1" path="res://Objects/Structures/Terran/Images/crystall_mine.png" id="1_4vses"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4k4m0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3hpb"]
+size = Vector2(304, 304)
+
+[node name="Crustal Mine" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_4k4m0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(152, 152)
+shape = SubResource("RectangleShape2D_c3hpb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(152, 152)
+texture = ExtResource("1_4vses")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

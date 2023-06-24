@@ -1,0 +1,227 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://Objects/Windows/DroneMenu.cs" id="1_th8nw"]
+[ext_resource type="Texture2D" uid="uid://ljtylvlu2m2f" path="res://Objects/Structures/Terran/Images/metall_mine.png" id="2_dmfh1"]
+[ext_resource type="Texture2D" uid="uid://ckbxee4ky7squ" path="res://Imports/icons/cross_close.png" id="2_hy13t"]
+[ext_resource type="Texture2D" uid="uid://bjfrl5xcwugr1" path="res://Objects/Structures/Terran/Images/crystall_mine.png" id="4_bx2fp"]
+[ext_resource type="Texture2D" uid="uid://b4dedxuhaap06" path="res://Objects/Structures/Terran/Images/solar_power_plant.png" id="5_l7m77"]
+
+[node name="DroneMenu" type="CanvasLayer"]
+script = ExtResource("1_th8nw")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.258
+anchor_top = 0.237
+anchor_right = 0.779
+anchor_bottom = 0.652
+offset_left = 0.639954
+offset_top = 0.039978
+offset_right = -7.68005
+offset_bottom = -0.160034
+
+[node name="Background" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.960784)
+metadata/_edit_use_custom_anchors = true
+metadata/_edit_layout_mode = 1
+
+[node name="WindowHeader" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.274
+anchor_top = -0.107
+anchor_right = 0.726
+anchor_bottom = -0.018
+offset_left = 0.191986
+offset_top = -0.0639954
+offset_right = -0.192017
+offset_bottom = 0.0640001
+color = Color(0, 0, 0, 0.960784)
+
+[node name="Label" type="Label" parent="Control/WindowHeader"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.214
+anchor_right = 0.786
+anchor_bottom = 1.0
+offset_left = 0.127991
+offset_right = -0.127991
+theme_override_font_sizes/font_size = 18
+text = "Панель строительства"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Close" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.944
+anchor_top = 0.012
+anchor_right = 0.994
+anchor_bottom = 0.1
+offset_left = -0.447998
+offset_top = 2.624
+offset_right = -2.04797
+offset_bottom = 2.304
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_hy13t")
+ignore_texture_size = true
+stretch_mode = 6
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.274
+anchor_top = 0.018
+anchor_right = 0.661
+anchor_bottom = 0.089
+offset_left = 0.191986
+offset_top = -0.0640001
+offset_right = 0.287964
+offset_bottom = -2.872
+theme_override_font_sizes/font_size = 18
+text = "Свободные поля строительства"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.661
+anchor_top = 0.018
+anchor_right = 0.726
+anchor_bottom = 0.083
+offset_left = 0.287964
+offset_top = -0.0640001
+offset_right = -0.192017
+offset_bottom = -0.184002
+theme_override_font_sizes/font_size = 18
+text = "136"
+vertical_alignment = 1
+
+[node name="1" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.024
+anchor_top = 0.143
+anchor_right = 0.169
+anchor_bottom = 0.464
+offset_left = 0.192032
+offset_top = -0.064003
+offset_right = 36.352
+offset_bottom = 36.128
+scale = Vector2(0.8, 0.8)
+mouse_default_cursor_shape = 2
+toggle_mode = true
+texture_normal = ExtResource("2_dmfh1")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="2" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.185
+anchor_top = 0.143
+anchor_right = 0.331
+anchor_bottom = 0.464
+offset_left = 0.480072
+offset_top = -0.064003
+offset_right = 35.648
+offset_bottom = 36.128
+scale = Vector2(0.8, 0.8)
+mouse_default_cursor_shape = 2
+toggle_mode = true
+texture_normal = ExtResource("4_bx2fp")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="3" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.347
+anchor_top = 0.143
+anchor_right = 0.492
+anchor_bottom = 0.464
+offset_left = -0.223907
+offset_top = -0.064003
+offset_right = 35.9361
+offset_bottom = 36.128
+scale = Vector2(0.8, 0.8)
+mouse_default_cursor_shape = 2
+toggle_mode = true
+texture_normal = ExtResource("5_l7m77")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="4" type="TextureButton" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.508
+anchor_top = 0.143
+anchor_right = 0.653
+anchor_bottom = 0.464
+offset_left = 0.0640869
+offset_top = -0.064003
+offset_right = 36.2241
+offset_bottom = 36.128
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("2_dmfh1")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="5" type="TextureButton" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.669
+anchor_top = 0.143
+anchor_right = 0.815
+anchor_bottom = 0.464
+offset_left = 0.35199
+offset_top = -0.064003
+offset_right = 35.52
+offset_bottom = 36.128
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("2_dmfh1")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="6" type="TextureButton" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.831
+anchor_top = 0.143
+anchor_right = 0.976
+anchor_bottom = 0.464
+offset_left = -0.35199
+offset_top = -0.064003
+offset_right = 35.808
+offset_bottom = 36.128
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("2_dmfh1")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[connection signal="gui_input" from="Control/Close" to="." method="OnCloseGuiInput"]
+[connection signal="pressed" from="Control/1" to="." method="OnButtonPressed" binds= [1]]
+[connection signal="pressed" from="Control/2" to="." method="OnButtonPressed" binds= [2]]
+[connection signal="pressed" from="Control/3" to="." method="OnButtonPressed" binds= [3]]

@@ -1,0 +1,123 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Texture2D" uid="uid://bammgnqnbcant" path="res://Imports/images/planets/small/icy1.jpg" id="1_bom4b"]
+[ext_resource type="Script" path="res://Objects/scroll_planets.gd" id="1_g0oko"]
+[ext_resource type="Texture2D" uid="uid://x2kxstfkk2gx" path="res://Imports/icons/close_arrow.png" id="2_86nrb"]
+[ext_resource type="Texture2D" uid="uid://cgwf2my3h7dhf" path="res://Imports/images/planeten/eisplanet02.jpg" id="3_4ngw3"]
+[ext_resource type="Texture2D" uid="uid://dd7ia16ejxkcv" path="res://Imports/images/planeten/eisplanet04.jpg" id="4_nb4n5"]
+[ext_resource type="Texture2D" uid="uid://x0qxyu8y08y" path="res://Imports/icons/right_arrow.png" id="4_xymev"]
+[ext_resource type="Texture2D" uid="uid://b6c7xxth52pkv" path="res://Imports/images/planeten/gasplanet04.jpg" id="5_a6of2"]
+
+[node name="scroll_container" type="ColorRect"]
+anchor_right = 0.183
+anchor_bottom = 0.089
+offset_right = 16.64
+offset_bottom = -0.120003
+color = Color(0, 0, 0, 0.886275)
+script = ExtResource("1_g0oko")
+
+[node name="line_wrapper" type="ColorRect" parent="."]
+clip_contents = true
+anchor_left = 0.104
+anchor_right = 0.896
+anchor_bottom = 1.0
+offset_left = 1.728
+offset_right = -9.728
+color = Color(0, 0, 0, 0)
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="scroll_line" type="ColorRect" parent="line_wrapper"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_layout_mode = 1
+
+[node name="card_menu" type="TextureRect" parent="line_wrapper/scroll_line"]
+anchor_left = 0.028
+anchor_top = 0.083
+anchor_right = 0.314
+anchor_bottom = 0.917
+offset_left = 0.16
+offset_top = 0.0319996
+offset_right = 0.0799942
+offset_bottom = -0.0320053
+texture = ExtResource("1_bom4b")
+ignore_texture_size = true
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="card_menu2" type="TextureRect" parent="line_wrapper/scroll_line"]
+anchor_left = 0.371
+anchor_top = 0.083
+anchor_right = 0.657
+anchor_bottom = 0.917
+offset_left = 0.119995
+offset_top = 0.0319996
+offset_right = 0.0399933
+offset_bottom = -0.0320053
+texture = ExtResource("3_4ngw3")
+ignore_texture_size = true
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="card_menu3" type="TextureRect" parent="line_wrapper/scroll_line"]
+anchor_left = 0.714
+anchor_top = 0.083
+anchor_right = 1.0
+anchor_bottom = 0.917
+offset_left = 0.0799866
+offset_top = 0.0319996
+offset_bottom = -0.0320053
+texture = ExtResource("4_nb4n5")
+ignore_texture_size = true
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="card_menu4" type="TextureRect" parent="line_wrapper/scroll_line"]
+anchor_left = 1.028
+anchor_top = 0.083
+anchor_right = 1.306
+anchor_bottom = 0.917
+offset_left = -0.0639954
+offset_top = 0.0319996
+offset_right = -0.128021
+offset_bottom = -0.0320053
+texture = ExtResource("5_a6of2")
+ignore_texture_size = true
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="left" type="TextureButton" parent="."]
+anchor_top = 0.417
+anchor_right = 0.087
+anchor_bottom = 0.667
+offset_top = -0.0320015
+offset_right = -0.0160027
+offset_bottom = -0.0320053
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_86nrb")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="right" type="TextureButton" parent="."]
+anchor_left = 0.913
+anchor_top = 0.417
+anchor_right = 1.0
+anchor_bottom = 0.667
+offset_left = 0.0159912
+offset_top = -0.0320015
+offset_bottom = -0.0320053
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_xymev")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[connection signal="pressed" from="left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="right" to="." method="_on_right_pressed"]
