@@ -4,7 +4,7 @@ using Core;
 
 public partial class HeadLine : Node
 {
-  private HttpDataAccess Http;
+  private HTTPManager Http;
   private WindowManager WManager;
   private Node Container;
   private GlobalSignals Signals;

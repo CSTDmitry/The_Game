@@ -1,15 +1,12 @@
 using Godot;
 using System;
-using HTTP.Interface;
 using HTTP;
 using System.Threading.Tasks;
-using Network.HTTP;
 
-public partial class HttpDataAccess : Node
+public partial class HTTPManager : Node
 {
   private string Id { get; set; }
-  private string User { get; set; }
-  private string Password { get; set; }
+  private string EMail { get; set; }
   private string Token { get; set; }
 
   private HttpAccess HTTP;
@@ -21,14 +18,11 @@ public partial class HttpDataAccess : Node
 
   public async Task<string> TryToGetAccess(string email, string password)
   {
-    await Task.Delay(5000);
+    var response = await HTTP.SendPost(email, password);
 
-    return Guid.NewGuid().ToString();
-  }
+    var json = await response.Content.ReadAsStringAsync();
 
-  public string GetUserName()
-  {
-    return "Kapitoshka";
+    return json;
   }
 
   private async void Test()

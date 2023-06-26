@@ -5,9 +5,10 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Network.HTTP
+namespace HTTP
 {
   public partial class HttpAccess
   {
@@ -16,6 +17,19 @@ namespace Network.HTTP
     public HttpAccess()
     {
       Http = new() { BaseAddress = new Uri("http://localhost:8643") };
+    }
+
+    public async Task<HttpResponseMessage> SendPost(string email, string password)
+    {
+      using StringContent jsonContent = new (JsonSerializer.Serialize
+        (
+          new { email, password }), Encoding.UTF8, "application/json"
+        );
+
+      using HttpResponseMessage response = await Http.PostAsync(
+          "todos", jsonContent);
+
+      return response;
     }
 
     public async Task<string> Get()
