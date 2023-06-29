@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=2 format=3 uid="uid://b0eavk8anhs0s"]
 
 [ext_resource type="PackedScene" path="res://WindowsContainer/HeadLine.tscn" id="1_is05a"]
 

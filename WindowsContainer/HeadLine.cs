@@ -1,17 +1,15 @@
 using Godot;
 using Godot.Collections;
 using Core;
+using Core.Controller;
 
 public partial class HeadLine : Node
 {
-  private HTTPManager Http;
   private WindowManager WManager;
   private Node Container;
   private GlobalSignals Signals;
 
 	private Array<Node> Labels;
-
-  private WindowManager WindowManager;
 
 
 	public override void _Ready()
@@ -23,7 +21,7 @@ public partial class HeadLine : Node
     WManager = GetNode<WindowManager>("/root/WindowManager");
 
 
-    //GD.Print(WindowManager.GetController<TestController>().TestCall());
+    GD.Print(WManager.GetController<UserController>().Test());
     //SetUserData();
 
     Signals.EmitSignal("WindowChange", 1, Container);

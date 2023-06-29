@@ -1,50 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
+﻿using Godot;
+using System;
 using System.Net;
 using System.Net.Http;
-using System.Text;
-using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace HTTP
 {
-  public partial class HttpAccess
+  public partial class HttpAccess : Node
   {
-    private HttpClient Http;
+    private System.Net.Http.HttpClient Http;
 
-    public HttpAccess()
+    public override void _Ready()
     {
       Http = new() { BaseAddress = new Uri("http://localhost:8643") };
     }
 
-    public async Task<HttpResponseMessage> SendPost(string email, string password)
+    public async Task<HttpResponseMessage> SendPost(string uri, StringContent body)
     {
-      using StringContent jsonContent = new (JsonSerializer.Serialize
-        (
-          new { email, password }), Encoding.UTF8, "application/json"
-        );
-
-      using HttpResponseMessage response = await Http.PostAsync(
-          "todos", jsonContent);
-
-      return response;
+      return await Http.PostAsync(uri, body);
     }
 
-    public async Task<string> Get()
+    public async Task<HttpResponseMessage> SendGet(string uri)
     {
-      using HttpResponseMessage response = await Http.GetAsync("api/player/1");
-
-      var result = await response.Content.ReadAsStringAsync();
+      using HttpResponseMessage response = await Http.GetAsync(uri);
 
       if (response is { StatusCode: HttpStatusCode.OK })
       {
-        return result;
+        return response;
       }
       else
       {
-        return "No";
+        throw new Exception("HttpAccess : Method Get error");
       }
     }
   }

@@ -24,11 +24,6 @@ namespace Core
     "res://WindowsContainer/Defense.tscn"
     };
 
-    public WindowManager()
-    {
-      
-    }
-
     public override void _Ready()
     {
       GetNode("/root/GlobalSignals").Connect("InitializeWindowsContainer", new Callable(this, MethodName.LoadWindowContainer));

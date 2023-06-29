@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Core;
 using Core.Interface;
 using Core.Abstract;
+using Core.Controller;
 
 namespace Windows.Configuration
 {
@@ -20,7 +20,7 @@ namespace Windows.Configuration
     public override Dictionary<Type, IObjectController> CreateControllers()
     {
       var controllersMap = new Dictionary<Type, IObjectController>();
-      CreateController<TestController>(controllersMap);
+      CreateController<UserController>(controllersMap);
       return controllersMap;
     }
   }
